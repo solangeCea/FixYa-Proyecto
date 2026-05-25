@@ -24,8 +24,6 @@ services:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/fixya_db
     ports:
       - "8000:8000"
-    volumes:
-      - ./FixYa:/app
 
   frontend:
     build:
@@ -37,9 +35,6 @@ services:
       - backend
     ports:
       - "5173:5173"
-    volumes:
-      - ./fixya-frontend:/app
-      - /app/node_modules
 
 volumes:
   fixya_postgres_data:
