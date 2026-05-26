@@ -12,6 +12,30 @@ Antes de ejecutar el proyecto instala:
 
 No es necesario instalar Node.js, npm, Python ni PostgreSQL localmente si se ejecuta con Docker.
 
+## Pasos obligatorios para ejecutar el proyecto
+
+Este repositorio maestro no incluye directamente el codigo del backend ni del frontend. Despues de clonar `FixYa-Proyecto`, es obligatorio clonar tambien los repositorios `FixYa` y `fixya-frontend` dentro de la carpeta principal.
+
+Ejecuta estos comandos en orden:
+
+```bash
+git clone https://github.com/solangeCea/FixYa-Proyecto.git
+cd FixYa-Proyecto
+
+git clone https://github.com/vanneglezn/FixYa.git
+git clone https://github.com/solangeCea/fixya-frontend.git
+
+docker compose up -d --build
+
+docker exec -i db psql -U postgres -d fixya_db < FixYa/database/seed.sql
+```
+
+Luego abre la web en:
+
+```txt
+http://localhost:5173
+```
+
 ## Estructura esperada
 
 El proyecto principal debe contener dos repositorios internos:
