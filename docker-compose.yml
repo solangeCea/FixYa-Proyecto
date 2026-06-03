@@ -22,6 +22,8 @@ services:
       - db
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/fixya_db
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_REVIEW_MODEL: ${OPENAI_REVIEW_MODEL:-gpt-5.4-mini}
     ports:
       - "8000:8000"
 
